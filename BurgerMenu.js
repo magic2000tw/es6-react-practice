@@ -53,11 +53,11 @@ class BurgerButton extends React.Component {
 
     const buttonStyle = {
       background:'transparent',
-      // position: 'fixed',
+      position: 'relative',
       width: '36px',
       height: '30px',
-      left: '36px',
-      top: '50%',
+      left: '5%',
+      top: '26%',
       zindex: 1
     };
     return(
