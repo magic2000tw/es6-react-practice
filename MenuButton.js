@@ -1,12 +1,12 @@
 import React from 'react'
 import {render} from 'react-dom'
 import Radium from 'radium'
-import BurgerButton from './BurgerMenu.js'
+import BurgerIcon from './BurgerIcon.js'
 
 class MenuButton extends React.Component{
   constructor(props){
     super(props)
-    this.state = {hover:false}
+    this.state = {hover:false,isOpen:false}
     this.handleHover = this.handleHover.bind(this)
     this.onClick = this.onClick.bind(this)
   }
@@ -16,7 +16,7 @@ class MenuButton extends React.Component{
   }
 
   onClick(){
-    alert('clicked');
+    this.setState({isClick: !this.state.isOpen});
   }
 
 
@@ -26,15 +26,15 @@ class MenuButton extends React.Component{
       width:'200px',
       height:'50px',
       background:'black',
-      top:'80%',
+      bottom:'0%',
       opacity: this.state.hover ? 0.6 : 1
     };
     const fontStyle = {
       position:'absolute',
       width:'60%',
       height:'20%',
-      top:'40%',
-      left:'45%',
+      top:'36%',
+      left:'40%',
       fontFamily:'sans-serif',
       fontSize:'100%',
       color:'white'
@@ -43,12 +43,17 @@ class MenuButton extends React.Component{
       <a style={buttonStyle}
            onMouseEnter={this.handleHover}
            onMouseLeave={this.handleHover}
-           href={this.onClick}>
-        <BurgerButton></BurgerButton>
+           onClick={this.onClick}
+           title={'This is a Menu'}
+           href={'javascript:'}>
+        <BurgerIcon isClick={this.state.isOpen}
+                    hover={this.state.hover}>
+        </BurgerIcon>
         <div style={fontStyle}>{this.props.children}</div>
       </a>
     )
   }
 }
+
 module.exports = Radium(MenuButton);
-render(<MenuButton>This is a menu</MenuButton>, document.getElementById('example'));
+render(<MenuButton>This is a Menu</MenuButton>, document.getElementById('example'));
