@@ -25,11 +25,11 @@ class Example extends React.Component{
       top:'20%',
       left:'20%',
       color:'white'
-    }
+    };
     return(
       <div style={menuStyle}>
-        <span className={'fa fa-graduation-cap'}></span>
-        <span style={contentStyle}>aaa</span>
+        <i className={'fa fa-camera-retro fa-2x fa-inverse'}></i>
+        <span style={contentStyle}>MENU1</span>
       </div>
     );
   }

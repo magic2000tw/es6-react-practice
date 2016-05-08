@@ -19,7 +19,7 @@ class MenuContent extends React.Component{
   render(){
     const contentStyle = {
       position: 'fixed',
-      width:'20%',
+      width:'300px',
       height:'90%',
       background:'black',
       top:'0%',
