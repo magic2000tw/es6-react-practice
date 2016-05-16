@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from 'react-dom'
 import Radium from 'radium'
-import MenuContent from './MenuContent.js'
+import MenuContainer from './MenuContainer.js'
 import MenuButton from './MenuButton.js'
 
 class Example extends React.Component{
@@ -37,9 +37,9 @@ class Example extends React.Component{
   render(){
     return(
       <div>
-        <MenuContent>
+        <MenuContainer>
           {this.getMenu()}
-        </MenuContent>
+        </MenuContainer>
         <main>
           <MenuButton>This is Menu</MenuButton>
         </main>
