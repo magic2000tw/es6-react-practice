@@ -8,12 +8,7 @@ class BurgerMenu extends React.Component{
   constructor(props){
     super(props)
     this.state = {isOpen:false}
-    //this.onClick = this.onClick.bind(this)
-  }
-
-  onClick(){
-    console.log('clicked!!');
-    this.setState({isOpen: !this.state.isOpen});
+    // this.onClick = this.onClick.bind(this)
   }
 
   getMenu(){
@@ -41,13 +36,20 @@ class BurgerMenu extends React.Component{
   }
 
   render(){
+    const onClick = () =>{
+      console.log('clicked!!');
+      this.setState({isOpen: !this.state.isOpen});
+    }
     return(
       <div className={'BurgerMenu'}>
         <MenuContainer>
           {this.getMenu()}
         </MenuContainer>
-        <MenuButton onClick={this.onClick.bind(this)}
-                    isOpen={this.state.isOpen}>{this.props.menuLable}</MenuButton>
+        <MenuButton onClick={onClick}
+                    isOpen={this.state.isOpen}
+                    menuLable={this.props.menuLable}>
+                    {this.props.menuLable}
+        </MenuButton>
       </div>
     );
   }

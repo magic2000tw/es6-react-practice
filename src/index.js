@@ -8,7 +8,7 @@ class Example extends React.Component{
   render(){
     return(
       <div>
-        <BurgerMenu menuLable={'This is menu'} />
+        <BurgerMenu menuLable={'This is SOL'} />
         <main>
           test1
         </main>
