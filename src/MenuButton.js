@@ -46,7 +46,7 @@ class MenuButton extends React.Component{
            onClick={this.onClick}
            title={'This is a Menu'}
            href={'javascript:'}>
-        <BurgerIcon isOpen={this.state.isOpen}
+        <BurgerIcon isOpen={this.props.isOpen}
                     hover={this.state.hover}>
         </BurgerIcon>
         <div style={fontStyle}>{this.props.children}</div>
