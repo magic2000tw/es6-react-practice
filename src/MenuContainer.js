@@ -12,7 +12,7 @@ const defaultMenu = [
 class MenuContainer extends React.Component{
   constructor(props){
     super(props)
-    this.state = {isClick: false, clickIndex: 0}
+    this.state = {isClick: false}
     // this.getMenu = this.getMenu.bind(this);
     /*this.onClick = this.onClick.bind(this)
     this.dropDown = this.dropDown.bind(this)*/
@@ -29,41 +29,6 @@ class MenuContainer extends React.Component{
       jsx.push(<MenuContent title={menu.title} contents={menu.contents}/>);
     });
     return jsx
-  }
-
-  dropDown(isClick,index){
-    console.log('dropDown: ' + index);
-    if(index == this.state.clickIndex){
-    styles.dropDown.maxHeight =  isClick ? '9999px' : '0';
-    styles.dropDown.transform = isClick ? 'scaleY(1)' : 'scaleY(0)';
-    styles.dropDown.transition = isClick ? 'max-height 1s ease-in-out' : 'max-height 0.6s ease-in-out';
-  }
-    /*const styles = {
-      dropDown: {
-      maxHeight:isClick ? '9999px' : '0',
-      display: 'block',
-      color:'white',
-      minWidth: '160px',
-      padding: '12px 16px',
-      position: 'absolute',
-      transform:isClick ? 'scaleY(1)' : 'scaleY(0)',
-      animationDuration:'2s',
-      animationName:isClick ? openKeyframes : closeKeyframes,
-      transition:isClick ? 'max-height 1s ease-in-out' : 'max-height 0.6s ease-in-out'
-      }
-    };*/
-    return styles.dropDown;
-  }
-  componentWillUpdate(){
-    if(this.state.isClick){
-      //console.log(this.state.isClick);
-      styles.dropDown.animationName = closeKeyframes;
-      //console.log(styles);
-    }else{
-      //console.log(this.state.isClick);
-      styles.dropDown.animationName = openKeyframes;
-      //console.log(styles);
-    }
   }
 
   render(){
@@ -96,7 +61,7 @@ class MenuContainer extends React.Component{
     };
     const menu = this.genMenu(defaultMenu);
     return(
-      <div style={contentStyle}>
+      <div style={contentStyle} >
       {/*this.props.children*/}
         <ul>
           {menu}
