@@ -6,18 +6,18 @@ import BurgerIcon from './BurgerIcon.js'
 class MenuButton extends React.Component{
   constructor(props){
     super(props)
-    this.state = {hover:false,isOpen:false}
+    this.state = {hover:false}
     this.handleHover = this.handleHover.bind(this)
-    this.onClick = this.onClick.bind(this)
+    // this.onClick = this.onClick.bind(this)
   }
 
   handleHover(){
     this.setState({hover: !this.state.hover});
   }
 
-  onClick(){
+  /*onClick(){
     this.setState({isOpen: !this.state.isOpen});
-  }
+  }*/
 
 
   render(){
@@ -43,10 +43,10 @@ class MenuButton extends React.Component{
       <a style={buttonStyle}
            onMouseEnter={this.handleHover}
            onMouseLeave={this.handleHover}
-           onClick={this.onClick}
-           title={'This is a Menu'}
+           onClick={this.props.onClick}
+           title={this.props.menuLable}
            href={'javascript:'}>
-        <BurgerIcon isOpen={this.state.isOpen}
+        <BurgerIcon isOpen={this.props.isOpen}
                     hover={this.state.hover}>
         </BurgerIcon>
         <div style={fontStyle}>{this.props.children}</div>

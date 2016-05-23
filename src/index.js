@@ -1,10 +1,10 @@
 import React from 'react'
 import {render} from 'react-dom'
 import Radium from 'radium'
-import MenuContainer from './MenuContainer.js'
-import MenuButton from './MenuButton.js'
+import BurgerMenu from './BurgerMenu.js'
 
 class Example extends React.Component{
+
   // constructor(props){
   //   super(props)
   //   this.getMenu = this.get.bind(this)
@@ -36,11 +36,9 @@ class Example extends React.Component{
   render(){
     return(
       <div>
-        <MenuContainer>
-          {this.getMenu()}
-        </MenuContainer>
+        <BurgerMenu menuLable={'This is SOL'} />
         <main>
-          <MenuButton>This is Menu</MenuButton>
+          test1
         </main>
       </div>
     )

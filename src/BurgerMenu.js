@@ -1,28 +1,58 @@
 import React from 'react'
 import {render} from 'react-dom'
 import Radium from 'radium'
+import MenuContainer from './MenuContainer.js'
+import MenuButton from  './MenuButton.js'
 
 class BurgerMenu extends React.Component{
   constructor(props){
     super(props)
+    this.state = {isOpen:false}
+    // this.onClick = this.onClick.bind(this)
   }
 
-  handleHover(){
-    this.setState({hover: !this.state.hover});
-  }
-
-  onClick(){
-    this.setState({isClick: !this.state.isClick});
+  getMenu(){
+    const menuStyle = {
+      position:'absolute',
+      width:'60%',
+      height:'10%',
+      top:'10%',
+      left:'30%'
+    };
+    const contentStyle = {
+      position:'absolute',
+      width:'60%',
+      height:'20%',
+      top:'20%',
+      left:'20%',
+      color:'white'
+    };
+    return(
+      <div style={menuStyle}>
+        <i className={'fa fa-camera-retro fa-2x fa-inverse'}></i>
+        <span style={contentStyle}>MENU1</span>
+      </div>
+    );
   }
 
   render(){
+    const onClick = () =>{
+      console.log('clicked!!');
+      this.setState({isOpen: !this.state.isOpen});
+    }
     return(
-      <div>
-        <MenuContent>
+      <div className={'BurgerMenu'}>
+        <MenuContainer>
           {this.getMenu()}
-        </MenuContent>
-        <MenuButton>This is Menu</MenuButton>
+        </MenuContainer>
+        <MenuButton onClick={onClick}
+                    isOpen={this.state.isOpen}
+                    menuLable={this.props.menuLable}>
+                    {this.props.menuLable}
+        </MenuButton>
       </div>
     );
   }
 }
+
+export default BurgerMenu;
