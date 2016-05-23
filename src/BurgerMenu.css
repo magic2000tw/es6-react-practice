@@ -1,9 +1,0 @@
-.menu-content a{
-  textDecoration: none;
-  padding: 5px 10px;
-  display: block;
-}
-
-.menu-content a:hover {
-  opacity: 0.3;
-}

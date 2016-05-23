@@ -72,8 +72,12 @@ class MenuContainer extends React.Component{
       width:'300px',
       height:'92%',
       background:'black',
-      top:'0%',
-      left:'0'
+      top:'0%'
+    };
+    const aStyle = {
+      textDecoration: 'none',
+      padding: '5px 10px',
+      display: 'block'
     };
     const divStyle ={
       position: 'relative',

@@ -9,7 +9,6 @@ class Example extends React.Component{
   //   super(props)
   //   this.getMenu = this.get.bind(this)
   // }
-
   getMenu(){
     const menuStyle = {
       position:'absolute',
