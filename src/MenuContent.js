@@ -8,14 +8,12 @@ import classNames from 'classnames'
 class MenuContent extends React.Component{
   constructor(props){
     super(props);
-    this.state = {isClick: false};
     this.onClick = this.onClick.bind(this);
-    /*this.onClick = this.onClick.bind(this)
-    this.dropDown = this.dropDown.bind(this)*/
+    this.state = {isSubOpen: false}
   }
 
   onClick(){
-      this.setState({isClick: !this.state.isClick});
+      this.setState({isSubOpen: !this.state.isSubOpen});
   }
 
   makeContents(contents){
@@ -33,8 +31,8 @@ class MenuContent extends React.Component{
 render(){
     var dropDownClass = classNames({
      'dropdown-menu': true,
-     'show': !this.state.isClick,
-     'hide': this.state.isClick
+     'show': this.state.isSubOpen,
+     'hide': !this.state.isSubOpen
    });
 
     var contents = this.makeContents(this.props.contents);

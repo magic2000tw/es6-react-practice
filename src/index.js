@@ -3,6 +3,16 @@ import {render} from 'react-dom'
 import Radium from 'radium'
 import BurgerMenu from './BurgerMenu.js'
 
+const defaultMenu = [
+  {'title': 'title1', 'contents':['content1','content2','content3','content1','content2','content3']},
+  {'title': 'title2', 'contents':['content4','content5','content6','content1','content2','content3']},
+  {'title': 'title2', 'contents':['content4','content5','content6','content1','content2','content3']},
+  {'title': 'title2', 'contents':['content4','content5','content6','content1','content2','content3']},
+  {'title': 'title2', 'contents':['content4','content5','content6','content1','content2','content3']},
+  {'title': 'title2', 'contents':['content4','content5','content6','content1','content2','content3']},
+  {'title': 'title2', 'contents':['content4','content5','content6','content1','content2','content3']}
+];
+
 class Example extends React.Component{
 
   // constructor(props){
@@ -36,7 +46,8 @@ class Example extends React.Component{
   render(){
     return(
       <div>
-        <BurgerMenu menuLable={'This is SOL'} />
+        <BurgerMenu menuLable={'This is SOL'}
+                    menuContents={defaultMenu}/>
         <main>
           test1
         </main>

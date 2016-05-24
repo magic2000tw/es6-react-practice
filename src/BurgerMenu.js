@@ -4,6 +4,8 @@ import Radium from 'radium'
 import MenuContainer from './MenuContainer.js'
 import MenuButton from  './MenuButton.js'
 
+
+
 class BurgerMenu extends React.Component{
   constructor(props){
     super(props)
@@ -11,40 +13,15 @@ class BurgerMenu extends React.Component{
     // this.onClick = this.onClick.bind(this)
   }
 
-  getMenu(){
-    const menuStyle = {
-      position:'absolute',
-      width:'60%',
-      height:'10%',
-      top:'10%',
-      left:'30%'
-    };
-    const contentStyle = {
-      position:'absolute',
-      width:'60%',
-      height:'20%',
-      top:'20%',
-      left:'20%',
-      color:'white'
-    };
-    return(
-      <div style={menuStyle}>
-        <i className={'fa fa-camera-retro fa-2x fa-inverse'}></i>
-        <span style={contentStyle}>MENU1</span>
-      </div>
-    );
-  }
-
   render(){
     const onClick = () =>{
-      console.log('clicked!!');
+      console.log(this.state.isOpen);
       this.setState({isOpen: !this.state.isOpen});
     }
     return(
       <div className={'BurgerMenu'}>
-        <MenuContainer>
-          {this.getMenu()}
-        </MenuContainer>
+        <MenuContainer isOpen={this.state.isOpen}
+                       menuContents={this.props.menuContents}/>
         <MenuButton onClick={onClick}
                     isOpen={this.state.isOpen}
                     menuLable={this.props.menuLable}>
